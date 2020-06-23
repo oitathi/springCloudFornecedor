@@ -1,5 +1,6 @@
 package com.example.springCloud.fornecedor.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,5 +20,4 @@ public class InfoController {
 	public InfoFornecedor getInfoPorEstado(@PathVariable String estado) {
 		return infoService.getInfoPorEstado(estado);
 	}
-
 }

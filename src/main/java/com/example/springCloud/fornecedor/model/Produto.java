@@ -1,5 +1,6 @@
 package com.example.springCloud.fornecedor.model;
 
+import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,39 +10,64 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
 @Entity
-
-public class InfoFornecedor {
+public class Produto {
 
 	@Id
-	@SequenceGenerator(name = "info_id_seq", sequenceName = "info_id_seq", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "info_id_seq")
-	@Column(name = "fornecedor_id")
+	@SequenceGenerator(name = "produto_id_seq", sequenceName = "produto_id_seq", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "produto_id_seq")
+	@Column(name = "produto_id")
 	
 	/*@Id
-	@Column(name = "fornecedor_id", columnDefinition = "serial")
+	@Column(name = "produto_id", columnDefinition = "serial")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)*/
 	private Long id;
-	
+
 	private String nome;
-	
+
 	private String estado;
+
+	private String descricao;
+
+	private BigDecimal preco;
+
 	
-	private String endereco;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public String getNome() {
 		return nome;
 	}
 
+	
+
+	public Long getId() {
+		return id;
+	}
+
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public BigDecimal getPreco() {
+		return preco;
+	}
+
+	public void setPreco(BigDecimal preco) {
+		this.preco = preco;
 	}
 
 	public String getEstado() {
@@ -52,13 +78,4 @@ public class InfoFornecedor {
 		this.estado = estado;
 	}
 
-	public String getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
-	
-	
 }
